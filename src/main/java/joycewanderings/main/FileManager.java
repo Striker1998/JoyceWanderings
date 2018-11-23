@@ -9,7 +9,7 @@ public class FileManager {
     private String source;
     private String name;
 
-    public FileManager(String source, String name) {
+    public FileManager(String source) {
         this.source = source;
         this.name = name;
     }
