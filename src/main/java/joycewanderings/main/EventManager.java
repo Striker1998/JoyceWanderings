@@ -6,41 +6,25 @@ package main.java.joycewanderings.main;
  */
 public class EventManager {
     private Event current = null;
-    private Event head;
-    public EventManager() {
+    private Event head = null;
+    private String sourceDirectory;
+    public EventManager(String sourceDirectory) {
+        this.sourceDirectory = sourceDirectory;
     }
 
-    public void addNodeLeft(String location){
-        Event temp = new Event(new FileManager(location));
-        if (current == null){
-            head = temp;
+    public void createTree(){
+        if (head==null){
+            head = new Event(new FileManager("cats"));
             current = head;
         }
         else{
-            current.setLeft(temp);
+            current.setLeft(new Event(new FileManager("Main")));
         }
-    }
-    public void addNodeCenter(String location){
-        Event temp = new Event(new FileManager(location));
-        if (current == null){
-            head = temp;
-            current = head;
-        }
-        else{
-            current.setCenter(temp);
-        }
-    }
-    public void addNodeRight(String location){
-        Event temp = new Event(new FileManager(location));
-        if (current == null){
-            head = temp;
-            current = head;
-        }
-        else{
-            current.setRight(temp);
-        }
-    }
 
+    }
+    public String getSourceDirectory(){
+        return sourceDirectory;
+    }
     public Event getCurrent(){
         return current;
     }
