@@ -13,13 +13,13 @@ public class Main {
         int choice = input.nextInt();
         switch(choice){
             case 1:
-                player = new Character("Stephen", "");
+                player = new Character("Stephen", "/Users/kylewebster/Desktop/JoyceWanderings/Stephen");
                 break;
             case 2:
-                player = new Character("Bloom", "");
+                player = new Character("Bloom", "/Users/kylewebster/Desktop/JoyceWanderings/Bloom");
                 break;
             case 3:
-                player = new Character("Molly", "");
+                player = new Character("Molly", "/Users/kylewebster/Desktop/JoyceWanderings/Molly");
                 break;
             default:
                 System.out.println("How?.. What?... How did you mess up this badly??? There were only 3 options...");

@@ -2,6 +2,7 @@ package main.java.joycewanderings.main;
 
 /**
  * Created by kylewebster on 11/26/18.
+ * Basic player, most important function is playGame
  */
 public class Character {
     private String name;
@@ -33,8 +34,7 @@ public class Character {
             System.out.println("Something went horribly wrong... I'm ending this now");
         }
         else {
-            eventManager.createTree();
-            System.out.println("Hello " + name);
+            eventManager.createTree(eventManager.getSourceDirectory());
         }
     }
 }

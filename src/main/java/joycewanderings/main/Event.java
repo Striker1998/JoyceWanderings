@@ -15,7 +15,7 @@ public class Event {
         name = sourceFileDirectory.getName();
     }
 
-    public String getContent()throws Exception{
+    public String getContent(){
         return sourceFileDirectory.getContent();
     }
 
