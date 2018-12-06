@@ -2,6 +2,8 @@ package main.java.joycewanderings.main;
 
 import java.io.*;
 import java.util.Scanner;
+import java.util.regex.*;
+
 /**
  * Created by kylewebster on 11/19/18.
  * Allows the opening and closing of files
@@ -12,6 +14,14 @@ public class FileManager {
 
     public FileManager(String source) {
         this.source = source;
+        String pattern = "(.*/)(.*\\Z)";
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(source);
+        if (m.find()) {
+            name = m.group(2);
+        }else{
+
+        }
     }
 
     public String getSource() {

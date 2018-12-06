@@ -1,4 +1,7 @@
 package main.java.joycewanderings.main;
+
+import java.util.regex.*;
+
 /**
  * Created by kylewebster on 11/19/18.
  * contains the individual event
@@ -6,10 +9,11 @@ package main.java.joycewanderings.main;
 
 public class Event {
     private FileManager sourceFileDirectory;
-    private String name;
-    private Event left;
-    private Event right;
-    private Event center;
+    private String name = null;
+    private Event left = null;
+    private Event right = null;
+    private Event center = null;
+    private Event parent = null;
     public Event(FileManager sourceFileDirectory) {
         this.sourceFileDirectory = sourceFileDirectory;
         name = sourceFileDirectory.getName();
@@ -19,11 +23,8 @@ public class Event {
         return sourceFileDirectory.getContent();
     }
 
-    private void setEvents(Event left, Event center, Event right){
-        this.left = left;
-        this.center = center;
-        this.right = right;
-    }
+    public Event getParent(){return parent;}
+    public void setParent(Event parent){this.parent = parent;}
 
     public Event getLeft() {
         return left;
@@ -48,22 +49,11 @@ public class Event {
     public void setCenter(Event center) {
         this.center = center;
     }
-
-    public Event getEvent(int selection){
-        Event chosen = null;
-        switch (selection){
-            case 0:
-                chosen= left;
-                break;
-            case 1:
-                chosen= center;
-                break;
-            case 2:
-                chosen= right;
-                break;
-            default:
-                System.out.println("Hmmm... Did Stephen close his eyes and the world cease to exist?");
-        }
-        return chosen;
+    public String getDirectory(){
+        return sourceFileDirectory.getSource();
     }
+    public String getName(){
+        return sourceFileDirectory.getName();
+    }
+
 }
