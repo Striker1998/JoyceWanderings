@@ -11,31 +11,23 @@ public class Main {
         boolean finished = false;
         System.out.println("Welcome to JoyceWanderings, please select your player or type Exit to quit");
         while(!finished) {
-
-
-            System.out.println("Stephen\nBloom\nMolly\nExit");
+            System.out.println("Stephen\nBloom\nMolly");
             String choice = input.nextLine();
             switch (choice) {
                 case "Stephen":
                     player = new Character("Stephen", "/Users/kylewebster/Desktop/JoyceWanderings/Stephen");
                     System.out.println("Thank you for choosing " + player.getName());
-                    player.playGame();
+                    finished = player.playGame();
                     break;
                 case "Bloom":
                     player = new Character("Bloom", "/Users/kylewebster/Desktop/JoyceWanderings/Bloom");
                     System.out.println("Thank you for choosing " + player.getName());
-                    player.playGame();
+                    finished = player.playGame();
                     break;
                 case "Molly":
                     player = new Character("Molly", "/Users/kylewebster/Desktop/JoyceWanderings/Molly");
                     System.out.println("Thank you for choosing " + player.getName());
-                    player.playGame();
-                    break;
-                case "Exit":
-                    finished = true;
-                    System.out.println("Thank you playing JoyceWanderings Early Early Beta 1.0. " +
-                            "I plan on expanding the game to the rest of the day as well as adding a graphical interface." +
-                            "This is the culmination of all of my studies ");
+                    finished = player.playGame();
                     break;
                 default:
                     System.out.println("Please, try again");
